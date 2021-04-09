@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import url(D:\Netproject\startpage\node_modules\bootstrap\dist\css\bootstrap.min.css);
+@import url(D:\Netproject\startpage\node_modules\font-awesome\css\font-awesome.css);*/
+@import  url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import  url(../node_modules/font-awesome/css/font-awesome.min.css);
+
+.button {
+  background-color: #FFD700;
+  border: none;
+  color: black;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.cover{
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}

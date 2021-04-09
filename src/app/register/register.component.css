@@ -1,0 +1,110 @@
+.modal-content {
+  background: rgba(11,32,86,1);
+  position: absolute;
+  border-radius: 15px;
+  width: 400px;
+  height: 550px;
+}
+
+.modal-login .modal-header {
+  border-bottom: none;
+  position: relative;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.modal-header .modal-title {
+  color: rgba(255,255,255,1);
+  position: absolute;
+  font-family: Montserrat;
+  font-weight: Regular;
+  font-size: 36px;
+  opacity: 1;
+  text-align: center;
+}
+.modal-login  .form-group {
+  position: relative;
+}
+.modal-login i {
+  position: absolute;
+  left: 13px;
+  top: 11px;
+  font-size: 18px;
+}
+.modal-login .form-control {
+  padding-left: 40px;
+}
+.modal-login .form-control:focus {
+  border-color: #00ce81;
+}
+.modal-login .form-control, .modal-login .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+.modal-login .hint-text {
+  font-family: Montserrat;
+  font-weight: Regular;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 10px;
+}
+.modal-login .close {
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  font-size: 38px;
+  top: -5px;
+  right: -5px;
+}
+
+/* buttons focus colors */
+.modal-body .btn, .modal-body .btn:active {
+  border: none;
+  background: #00ce81 !important;
+  line-height: normal;
+}
+.modal-body .btn:hover, .modal-body .btn:focus {
+  background: #00bf78 !important;
+}
+/* footer styles */
+.modal-footer {
+  border-bottom: none;
+  border-color: rgba(11,32,86,1);
+  position: absolute;
+  justify-content: center;
+  margin-top: 375px;
+}
+.modal-footer .modal-footer-title {
+  color:rgba(255, 255, 255, 1);
+  position: relative;
+  font-family: Montserrat;
+  font-size: 22px;
+}
+/* footer buttons */
+.btn-circle {
+  background-color: rgba(255, 255, 255, 1);
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+.btn-circle i {
+  position: relative;
+  top: -1px;
+}
+
+.btn-footer {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: none;
+  width: 60px;
+  height: 60px;
+  color: white;
+  padding: 10px;
+}
+.col-20 {
+  position: relative;
+}

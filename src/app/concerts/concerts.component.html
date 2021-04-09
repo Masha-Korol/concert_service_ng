@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <style>
+    body {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+<div style="display: flex; flex-direction: row">
+  <div>
+    <div class="table-responsive-xl">
+
+      <div style="display: flex; flex-direction: column">
+
+        <div style="height: 350px; display: flex; flex-direction: column">
+          <table class="table" style="size: auto" id="rooms-table">
+            <thead class="datatable-header">
+            <tr>
+              <th style="cursor: pointer;" scope="col">Artist</th>
+              <th style="cursor: pointer;" scope="col">Venue</th>
+            </tr>
+            </thead>
+            <tr *ngFor="let concert of concerts">
+              <td>{{concert.artist.artistName}}</td>
+              <td>{{concert.venue.venueName}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-left: 15px">
+    Upload data:
+    <div style="display: flex; flex-direction: column">
+      <button (click)="goToLocationRegistration()">register new location</button>
+      <button (click)="goToVenueRegistration()">register new venue</button>
+      <button (click)="goToArtistRegistration()">register new artist</button>
+      <button (click)="goToConcertRegistration()">register new concert</button>
+    </div>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,71 @@
+<div class="modal-login">
+  <div class="modal-content">
+    <div class=" modal-header">
+      <h4 class="modal-title">Регистрация</h4>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form name="regForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <i class="fa fa-user"></i>
+          <input type="text" class="form-control" placeholder="Имя пользователя" name="username"
+                 [(ngModel)]="regForm.username" #username="ngModel" minlength="4" maxlength="20" required>
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors!.required">Укажите имя пользователя</div>
+            <div *ngIf="username.errors!.minlength">
+              Имя пользователя должно быть не менее 4 символов
+            </div>
+            <div *ngIf="username.errors!.maxlength">
+              Имя пользователя должно быть не более 20 символов
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-at"></i>
+          <input type="email" class="form-control" placeholder="E-mail" name="email" [(ngModel)]="regForm.email"
+                 #email="ngModel" required email />
+          <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+            <div *ngIf="email.errors!.required">Укажите e-mail</div>
+            <div *ngIf="email.errors!.email">
+              Проверьте e-mail
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" class="form-control" name="password" placeholder="Пароль" [(ngModel)]="regForm.password"
+                 minlength="1" #password="ngModel" required>
+          <div class="alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors!.required">
+              Укажите пароль
+            </div>
+            <div *ngIf="password.errors!.minlength">
+              Пароль должен быть не менее 1 символа
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-block btn-lg" value="Зарегистрироваться">
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isSignUpFailed">
+          Ошибка регистрации<br />{{ errorMessage }}
+        </div>
+        <i></i>
+      </form>
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Спасибо за регистрацию!
+      </div>
+    </div>
+    <div class="modal-footer">
+      <h3 class="modal-footer-title">Зарегистрироваться с помощью</h3>
+      <div class="modal-footer-buttons">
+        <div class="col-35">
+          <button id="vk-btn" class="btn-footer btn-circle m-1"></button>
+          <button id="google-btn" class="btn-footer btn-circle m-1"></button>
+          <button id="twitch-btn" class="btn-footer btn-circle m-1"></button>
+          <button id="mailru-btn" class="btn-footer btn-circle m-1"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

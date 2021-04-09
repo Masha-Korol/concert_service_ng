@@ -1,0 +1,40 @@
+<div class="modal-login">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Вход</h4>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form name="loginForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <i class="fa fa-user"></i>
+          <input type="text" class="form-control" placeholder="Имя пользователя" name="username"
+                 [(ngModel)]="loginForm.username" #username="ngModel" required>
+          <div class="alert-danger" role="alert" *ngIf="f.submitted && username.invalid">
+            Укажите имя пользователя
+          </div>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock"></i>
+          <input type="password" class="form-control" name="password" placeholder="Пароль"
+                 [(ngModel)]="loginForm.password" #password="ngModel" required>
+          <div class="alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+            <div *ngIf="password.errors!.required">
+              Укажите пароль
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-block btn-lg" value="Войти">
+        </div>
+        <div class="alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+          Произошла ошибка. Пожалуйста, повторите попытку позже.
+        </div>
+        <i></i>
+      </form>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+</div>

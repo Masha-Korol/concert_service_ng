@@ -1,0 +1,21 @@
+os: linux
+language: node_js
+node_js:
+  - "15.8"
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g @angular/cli
+script:
+  - npm install
+  - npm run build
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: "npm run build:prod; npm run build:war; /bin/bash scripts/deploy.sh $TOMCAT_PROD_IP"
+  on:
+    branch: master
+    condition: $DEPLOY = yes
+after_script:
+  - bash scripts/tg_alerts.sh
